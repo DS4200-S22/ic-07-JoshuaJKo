@@ -8,7 +8,29 @@ Modified: 12/08/21
 
 // Build your bar charts in this file 
 
+let data2 = [];
 
+const loadCSV = async function(data) { 
+  d3.csv('../data/barchart.csv').then(function(data) {
+    
+    for (let i = 0; i<data.length; i++){
+      data2.push(data[i]);
+    }
+  });
+}
+
+loadCSV()
+console.log(data2);
+
+console.log(data2.length);
+
+for (let i = 0; i < data2.length; i+=1){
+  console.log('prints');
+  console.log(data2[i]['score']);
+  data2[i]['score'] = parseInt(data2[i]['score']);
+}
+
+console.log(data2);
 
 // Set dimensions and margins for plots 
 const width = 900; 
@@ -36,6 +58,19 @@ const data1 = [
   {name: 'F', score: 91},
   {name: 'G', score: 18}
 ];
+
+console.log(data1)
+
+/*
+name,score
+A,80
+B,76
+C,90
+D,82
+E,90
+F,75
+G,86
+/*
 
 /*
 
