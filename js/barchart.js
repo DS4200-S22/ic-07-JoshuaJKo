@@ -12,7 +12,6 @@ let data2 = [];
 
 const loadCSV = async function(data) { 
   d3.csv('../data/barchart.csv').then(function(data) {
-    
     for (let i = 0; i<data.length; i++){
       data2.push(data[i]);
     }
@@ -20,17 +19,12 @@ const loadCSV = async function(data) {
 }
 
 loadCSV()
-console.log(data2);
-
-console.log(data2.length);
 
 for (let i = 0; i < data2.length; i+=1){
   console.log('prints');
   console.log(data2[i]['score']);
   data2[i]['score'] = parseInt(data2[i]['score']);
 }
-
-console.log(data2);
 
 // Set dimensions and margins for plots 
 const width = 900; 
